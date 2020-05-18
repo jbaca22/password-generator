@@ -1,9 +1,9 @@
 // Assignment code here
 //global variables
-var lowerCase = ;
-var upperCase = ;
-var specialCharacter = ;
-var numberCharacter = ;
+var lowerCase 
+var upperCase 
+var specialCharacter 
+var numberCharacter 
 
 var generatePassword = function() {
   //determines how long the password will be
@@ -33,6 +33,7 @@ var Confirm = function() {
   }
 
   else {
+    
   }
 }
 
