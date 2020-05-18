@@ -1,5 +1,12 @@
 // Assignment code here
 //global variables
+
+var masterArray =[]
+var lowerCaseLettersArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+var upperCaseLettersArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+var numberCharacterArray = ["1","2","3","4","5","6","7","8","9","0"]
+var specialCharacterArray = ["!","#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","]","^","_","`","{","|","}","~",]
+
 var lowerCase 
 var upperCase 
 var specialCharacter 
@@ -10,10 +17,19 @@ var generatePassword = function() {
   var passwordLengthPrompt = window.prompt("How long would you like your password to be?")
 
   if (passwordLengthPrompt >= 8 && passwordLengthPrompt <= 128) {
-    //executes other questions regarding character types
     Confirm();
-  }
+    Randomize();
 
+    for (var i = 0; i<passwordLengthPrompt; i++) {
+      var randomLowerCase;
+      var randomUpperCase;
+      var randomSpecialCharacter;
+      var randomNumberCharacter;
+
+      randomLowerCase = randomNumber(0,25)
+      randomUpperCase = randomNumber(0,25)
+    }
+  }
   else {
     window.alert("Please enter a number between 8 and 128 that will determine the length of the password")
     generatePassword();
@@ -31,15 +47,44 @@ var Confirm = function() {
     window.alert("Please select at least one option in order to generate a password")
     Confirm();
   }
-
-  else {
-    
-  }
 }
 
 var Randomize = function () {
+  var lowerCase = function Confirm(lowerCaseConfirm){
 
+  };
+  var upperCase = function Confirm(upperCaseConfirm){
+
+  };
+  var specialCharacter = function Confirm(specialCharacterConfirm){
+
+  };
+  var numberCharacter = function Confirm(numberConfirm){
+
+  };
+
+  if (lowerCase == true) {
+    masterArray.push(lowerCaseLettersArray)
+  }
+
+  if (upperCase == true) {
+    masterArray.push(upperCaseLettersArray)
+  }
+
+  if (specialCharacter == true) {
+    masterArray.push(specialCharacterArray)
+  }
+
+  if (numberCharacter == true) {
+    masterArray.push(numberCharacterArray)
+  }
 }
+
+var randomNumber = function(min, max) {
+  var value = Math.floor(Math.random() * (max - min + 1) + min);
+
+  return value;
+};
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
