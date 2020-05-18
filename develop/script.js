@@ -1,6 +1,5 @@
 // Assignment code here
 //global variables
-
 var masterArray =[]
 var lowerCaseLettersArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 var upperCaseLettersArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
@@ -17,17 +16,21 @@ var generatePassword = function() {
   var passwordLengthPrompt = window.prompt("How long would you like your password to be?")
 
   if (passwordLengthPrompt >= 8 && passwordLengthPrompt <= 128) {
+    //if yes, other questions commence within Confirm
     Confirm();
-    Randomize();
-
+    //loops to create as many characters as desired by the user in passwordlengthprompt
     for (var i = 0; i<passwordLengthPrompt; i++) {
-      var randomLowerCase;
+      var randomizedNumbers;
       var randomUpperCase;
       var randomSpecialCharacter;
       var randomNumberCharacter;
+      //calls randomized numbers to the arrays specified in Confirm Function
+      randomizedNumbers = parseInt(Math.floor(Math.random()*masterArray.length));
+      randomUpperCase =
+      randomSpecialCharacter = 
+      randomNumberCharacter = 
 
-      randomLowerCase = randomNumber(0,25)
-      randomUpperCase = randomNumber(0,25)
+      console.log(randomizedNumbers)
     }
   }
   else {
@@ -47,44 +50,34 @@ var Confirm = function() {
     window.alert("Please select at least one option in order to generate a password")
     Confirm();
   }
-}
 
-var Randomize = function () {
-  var lowerCase = function Confirm(lowerCaseConfirm){
+  else {
+    var lowerCase = lowerCaseConfirm
+    var upperCase = upperCaseConfirm
+    var specialCharacter = specialCharacterConfirm
+    var numberCharacter = numberConfirm
 
-  };
-  var upperCase = function Confirm(upperCaseConfirm){
+    console.log(lowerCase,upperCase,specialCharacter,numberCharacter)
 
-  };
-  var specialCharacter = function Confirm(specialCharacterConfirm){
+    if (lowerCase == true) {
+      masterArray.push(lowerCaseLettersArray)
+    }
 
-  };
-  var numberCharacter = function Confirm(numberConfirm){
+    if (upperCase == true) {
+      masterArray.push(upperCaseLettersArray)
+    }
 
-  };
+    if (specialCharacter == true) {
+      masterArray.push(specialCharacterArray)
+    }
 
-  if (lowerCase == true) {
-    masterArray.push(lowerCaseLettersArray)
-  }
-
-  if (upperCase == true) {
-    masterArray.push(upperCaseLettersArray)
-  }
-
-  if (specialCharacter == true) {
-    masterArray.push(specialCharacterArray)
-  }
-
-  if (numberCharacter == true) {
-    masterArray.push(numberCharacterArray)
+    if (numberCharacter == true) {
+      masterArray.push(numberCharacterArray)
+    }
+    console.log(masterArray)
   }
 }
 
-var randomNumber = function(min, max) {
-  var value = Math.floor(Math.random() * (max - min + 1) + min);
-
-  return value;
-};
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
