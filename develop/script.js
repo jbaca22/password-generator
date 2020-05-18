@@ -5,18 +5,10 @@ var upperCaseLettersArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M"
 var numberCharacterArray = ["1","2","3","4","5","6","7","8","9","0"]
 var specialCharacterArray = ["!","#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","]","^","_","`","{","|","}","~",]
 var masterArray =[]
-//variables used to hold boolean true or false values
-var lowerCase 
-var upperCase 
-var specialCharacter 
-var numberCharacter
-//variable for how many characters the user chooses that he/she wants
-var passwordLengthPrompt
-//string variable for the new password
-var newPassword = "";
 
 var generatePassword = function() {
   //determines how long the password will be
+  var newPassword = "";
   var passwordLengthPrompt = window.prompt("How long would you like your password to be?")
 
   if (passwordLengthPrompt >= 8 && passwordLengthPrompt <= 128) {
@@ -35,10 +27,9 @@ var generatePassword = function() {
       storedRandom2 = storedRandom[randomizedNumbers2];
       //adds to the newpassword variable every loop so that all characters are shown, not just the last one
       newPassword += storedRandom2
-
-      //console.log(newPassword) // check to make sure the new password is properly being taken out of the arrays
+      console.log(newPassword) // check to make sure the new password is properly being taken out of the arrays
     }
-    debugger;
+    //returns value of the newPassword
     return newPassword;
   }
   //asks user to enter in a correct number
@@ -95,7 +86,8 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
-
+  //clears global variable so when generated again, the arrays start fresh
+  masterArray = [];
 }
 
 // Add event listener to generate button
